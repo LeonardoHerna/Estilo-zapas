@@ -379,6 +379,11 @@ body {
   transform: scale(1.02);
 }
 
+.sneakers {
+  background-image: url("img-1");
+}
+
+
 .card .info .title {
   margin: 0;
   font-size: 1rem;
