@@ -387,6 +387,10 @@ body {
   background-image: url("img-2");
 }
 
+. sandals{
+    background-image: url("img-3");
+}
+
 
 .card .info .title {
   margin: 0;
