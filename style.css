@@ -12,6 +12,21 @@
   --tracking-hero: -0.033em;
 }
 
+.dark {
+  --bg: #f5f7fa;
+  --panel: #ffffff;
+  --muted: #6f7c8c;
+  --primary-bg: #141a1f;
+}
+
+/* Ajustar textos en claro si usás fondo claro */
+.dark body {
+  color: #1f2a35;
+}
+
+
+
+
 * {
   box-sizing: border-box;
 }
