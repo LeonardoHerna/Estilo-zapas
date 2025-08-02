@@ -178,7 +178,7 @@ body {
   padding: 20px 0;
 }
 
-.hero-text {
+.hero {
   max-width: 960px;
   width: 100%;
   background-image: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOIlzeoWRJFmBpqJb-COvrvTQOyddIS4zo_u5k6DUz0lEWMRzrsRlK-Rywle-ZextfUxewV2fkUK3PaY5GmKi5U2PmgWvsmepGIfnAEzpgTlrl1Or5acwXFMFT41NZfe2_FUv4iA69FxOMTnTBSqMRigvYtKflN7-9pyTLgC_LL92TXz51IU7Lfk68mcWHCkePm44EHBKVeRC6zMjdllzJ6c7RodFPsPDkfD9zVi8Dk8Qf5z2NY5fAxabXGrpA7nsl3ccheX9QsRM");
@@ -192,6 +192,11 @@ body {
   align-items: center;
   text-align: center;
   min-height: 480px;
+}
+
+.hero-text{
+  align-items: center;
+  text-align: center;
 }
 
 .hero h1 {
