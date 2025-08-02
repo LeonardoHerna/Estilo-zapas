@@ -379,6 +379,10 @@ body {
   transform: scale(1.02);
 }
 
+.card .image sneakers {
+  background-image: "img-1.jpg";
+}
+
 .card .info .title {
   margin: 0;
   font-size: 1rem;
