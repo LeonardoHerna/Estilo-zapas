@@ -380,15 +380,16 @@ body {
 }
 
 .sneakers {
-  background-image: url("img-1");
+background-image: url("img-1.jpg");
+
 }
 
 .boots{
-  background-image: url("img-2");
+  background-image: url("img-2.jpg");
 }
 
 . sandals{
-    background-image: url("img-3");
+    background-image: url("img-3.jpg");
 }
 
 
