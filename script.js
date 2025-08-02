@@ -31,7 +31,7 @@
     if (!btn) return;
     if (currentTheme === "dark") {
       btn.setAttribute("aria-label", "Cambiar a tema claro");
-      // Opcional: cambiar el ícono si quieres (p.ej. sol/luna)
+  
     } else {
       btn.setAttribute("aria-label", "Cambiar a tema oscuro");
     }
