@@ -90,6 +90,8 @@ body {
   flex-wrap: wrap;
   animation: fadeInUp .5s ease-out both;
   transition: background .3s ease, border-color .3s ease;
+  position: relative;
+  z-index: 1001;
 }
 .dark .site-header {
   border-bottom-color: #e3e8ef;
@@ -100,6 +102,8 @@ body {
   align-items: center;
   gap: 32px;
   flex: 1;
+  position: relative;
+  z-index: 1001;
 }
 
 .brand {
@@ -123,22 +127,89 @@ body {
   color: var(--text-default);
 }
 
+/* links */
+
 .links {
   display: flex;
   gap: 36px;
   margin-left: 16px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1000; 
+  flex-direction: row;
 }
 
-.links a {
-  text-decoration: none;
+.dropdown {
+  position: relative;
+  z-index: 10;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-default);
+  cursor: pointer;
+  padding: 0;
   white-space: nowrap;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
 
+.dropdown-toggle:hover {
+  color: #666;
+}
+
+/* Submenú oculto con transición */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 999;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.submenu a {
+  display: block;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  color: #333;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Mostrar submenu al hacer hover en desktop */
+@media (hover: hover) {
+  .dropdown:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+/* Mostrar submenu cuando se abre manualmente (mobile) */
+.dropdown.open .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+/* nav-right */
 .nav-right {
   display: flex;
   align-items: center;
@@ -234,6 +305,146 @@ body {
   color: var(--text-default);
 }
 
+
+/* Botón hamburguesa oculto por defecto */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  font-size: 1.5rem;
+  color: var(--text-default);
+}
+
+/* Media query para tablets y móviles */
+@media (max-width: 1024px) {
+  
+  .site-header{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  }
+
+.search-wrapper {
+  min-width: 30%;
+  max-width: 50%;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left:0;
+    right: 0;
+    background: var(--panel);
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 24px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: visible;
+    transition: max-height 0.3s ease;
+    z-index: 1;
+
+  }
+  
+  /* Mostrar menú cuando está abierto */
+  .links.open {
+    display: flex;
+    max-height: 300px;
+ 
+  }
+
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    display: block;
+  }
+
+   .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+
+  .nav-right{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 22px;
+  
+  }
+
+  .nav-left {
+    flex: none;
+    position: relative;
+    overflow: visible;
+  }
+
+
+ .submenu {
+    position: absolute;
+    top: 8px;
+    left: 20%;
+    transform: translateX(0);
+    width: 200px;
+    height: auto;
+    background-color:var(--primary-bg); /* color más oscuro con opacidad */
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 1000;
+  }
+
+  .dropdown.open .submenu {
+    opacity: 1;
+    visibility: visible;
+     overflow: visible;
+  }
+
+  .submenu a {
+    display: block;
+    color: var(--bg);
+    padding: 12px 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    overflow: visible;
+    text-align: center;
+  
+  }
+
+  .submenu a:hover {
+    background-color: var(--primary-bg);
+    color: var(--bg);
+    border-radius: 8px;
+    padding-left: 12px;
+   
+  }
+
+
+}
+
+
+
+
+
+/* Hasta esta linea van los styles del encabezado */
+
+
+
 /* Main */
 .main-content {
   padding: 20px 40px 0;
@@ -241,6 +452,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 }
 
 .hero-wrapper {
@@ -248,6 +460,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px 0;
+ 
 }
 
 .hero {
@@ -267,6 +480,9 @@ body {
   min-height: 480px;
   animation: fadeInUp .6s ease-out both;
   transition: background .3s ease;
+  position: relative;
+  z-index: 1
+
 }
 
 .hero-text {
@@ -370,39 +586,92 @@ body {
   aspect-ratio: 3 / 4;
   border-radius: 12px;
   background-position: center;
+  object-fit: cover;
   background-size: cover;
   transition: transform .25s cubic-bezier(.22,.61,.36,1), filter .35s ease, opacity .35s ease;
   will-change: transform, opacity;
   transform-origin: top center;
 }
 .card:hover .image {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
+/* btn image */
+
+.image {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-btn {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+   background: white;
+  color: #141a1f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.card:hover .card-btn {
+  bottom: 16px;
+  opacity: 1;
+   background: #f2f2f2;
+}
+
+
+.image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.card:hover .image::before {
+  opacity: 1;
+}
+
+
+/* image card section */
 .sneakers {
-background-image: url("img-1.jpg");
+background-image: url("zapatillas.jpeg");
 
 }
 
 .boots{
-  background-image: url("img-2.jpg");
+  background-image: url("botas.jpeg");
 }
 
 .sandals{
-    background-image: url("img-3.jpg");
+    background-image: url("sandalias.jpeg");
 }
 
 
 .card .info .title {
-  margin: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-default);
 }
 
 .card .info .subtitle {
-  margin: 4px 0 0;
-  font-size: 0.875rem;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  font-size: 0.850rem;
   color: var(--muted);
   font-weight: 400;
 }
@@ -424,6 +693,7 @@ background-image: url("img-1.jpg");
   animation: fadeInUp .5s ease-out both;
   transition: transform .25s ease, box-shadow .25s ease, background .3s ease;
   background: var(--card-bg);
+  border-radius: 12px;
 }
 .category-card:hover {
   transform: translateY(-2px);
@@ -437,10 +707,34 @@ background-image: url("img-1.jpg");
   background-position: center;
   background-size: cover;
   transition: transform .25s cubic-bezier(.22,.61,.36,1);
+  position: relative;
+  overflow: hidden;
 }
 .category-card:hover .cat-image {
-  transform: scale(1.015);
+  transform: scale(1.025);
 }
+
+.category-card:hover .card-btn {
+  bottom: 16px;
+  opacity: 1;
+}
+
+.cat-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.category-card:hover .cat-image::before {
+  opacity: 1;
+}
+
+
 
 .mens {
   background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBaPCADGqAcZt3SXoZEqq7XrcW6XEcv-q-bL1b1HVYhHh0Izcn27J2msvJHxbrVB3RV_vZhVYe_1klsKYV2ufsz40O6kQpaJws98frR5oZ5b1N9I7c73NBli02Navy3jmQTydwsNuElfeBgIhPNQSgNL4NYfKZhWyDB6xwNdkQIYPWTfEam3yuXnWE6AZzqApIQuXNWLDmw9k-Qn6mbTXNjXk5H7T3kKSUQ6qQgPMhYsOmroQ_mLb1mPtawH4aUNxGxVJWdk7i7PDI");
@@ -455,7 +749,8 @@ background-image: url("img-1.jpg");
 }
 
 .category-card .cat-title {
-  margin: 0;
+  margin-bottom: 5px;
+  margin-left: 10px;
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-default);
@@ -512,6 +807,7 @@ background-image: url("img-1.jpg");
   min-width: 160px;
   text-align: center;
   transition: color .3s ease;
+  margin: 15px;
 }
 .dark .footer-links a {
   color: var(--text-default);

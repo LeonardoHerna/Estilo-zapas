@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Stitch Design</title>
+    <title>Estilo Zapas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,16 +27,55 @@
                   ></path>
                 </svg>
               </div>
-              <h2 class="brand-name">Zapas</h2>
+              <h2 class="brand-name"> E-Zapas</h2>
             </div>
-            <nav class="links">
-              <a href="#">New Arrivals</a>
-              <a href="#">Men</a>
-              <a href="#">Women</a>
-              <a href="#">Kids</a>
-              <a href="#">Sale</a>
-            </nav>
-          </div>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+          <!--Links-->
+<nav class="links">
+  <div class="dropdown">
+    <button class="dropdown-toggle">Recién llegados</button>
+    <div class="submenu">
+      <a href="#">Lo último</a>
+      <a href="#">Tendencias</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-toggle">Hombre</button>
+    <div class="submenu">
+      <a href="#">Remeras</a>
+      <a href="#">Pantalones</a>
+      <a href="#">Camperas</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-toggle">Mujer</button>
+    <div class="submenu">
+      <a href="#">Vestidos</a>
+      <a href="#">Blusas</a>
+      <a href="#">Zapatos</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-toggle">Niños</button>
+    <div class="submenu">
+      <a href="#">Juguetes</a>
+      <a href="#">Ropa escolar</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-toggle">Venta</button>
+    <div class="submenu">
+      <a href="#">Ofertas</a>
+      <a href="#">Última oportunidad</a>
+    </div>
+  </div>
+</nav>
+             
+      <!--Nav right-->
           <div class="nav-right">
             <label class="search-wrapper">
               <div class="search-inner">
@@ -82,60 +121,75 @@
           </div>
         </header>
 
+        <!--Hero-->
+
         <main class="main-content">
           <div class="hero-wrapper">
             <div class="hero">
               <div class="hero-text">
-                <h1>Step into Style</h1>
-                <h2>Discover the latest footwear trends and elevate your look with our curated collection.</h2>
+                <h1>Entra en el estilo</h1>
+                <h2>Descubre las últimas tendencias en calzado y mejora tu look con nuestra colección curada.</h2>
               </div>
-              <button class="primary-btn">Shop Now</button>
+              <button class="primary-btn">Compra ahora</button>
             </div>
           </div>
 
+          <!--Section-->
+
           <section class="section">
-            <h2 class="section-title">Featured Styles</h2>
+            <h2 class="section-title">Estilos destacados</h2>
             <div class="carousel">
               <div class="card">
-                <div class="image sneakers"></div>
+                <div class="image sneakers">
+                   <button class="card-btn">Ver colección</button>
+                </div>
                 <div class="info">
-                  <p class="title">Sneakers</p>
-                  <p class="subtitle">Explore our latest sneaker collection</p>
+                  <p class="title">Zapatillas</p>
+                  <p class="subtitle">Explora nuestra última colección de zapatillas.</p>
                 </div>
               </div>
               <div class="card">
                 <div class="image boots">
+                    <button class="card-btn">Ver colección</button>
                 </div>
                 <div class="info">
-                  <p class="title">Boots</p>
-                  <p class="subtitle">Find the perfect pair of boots for any occasion</p>
+                  <p class="title">Botas</p>
+                  <p class="subtitle">Encuentra el par de botas perfecto para cualquier ocasión.</p>
                 </div>
               </div>
               <div class="card">
                 <div class="image sandals">
+                    <button class="card-btn">Ver colección</button>
                 </div>
                 <div class="info">
-                  <p class="title">Sandals</p>
-                  <p class="subtitle">Step into comfort with our sandal selection</p>
+                  <p class="title">Sandalias</p>
+                  <p class="subtitle">Siéntase cómodo con nuestra selección de sandalias.</p>
                 </div>
               </div>
             </div>
           </section>
 
+          <!-- Section-Categorias -->
           <section class="section">
-            <h2 class="section-title">Shop by Category</h2>
+            <h2 class="section-title">Comprar por categoría</h2>
             <div class="categories">
               <div class="category-card">
-                <div class="cat-image mens"></div>
-                <p class="cat-title">Men's Shoes</p>
+                <div class="cat-image mens">
+                    <button class="card-btn">Ver colección</button>
+                </div>
+                <p class="cat-title">Zapatos de hombre</p>
               </div>
               <div class="category-card">
-                <div class="cat-image womens"></div>
-                <p class="cat-title">Women's Shoes</p>
+                <div class="cat-image womens">
+                    <button class="card-btn">Ver colección</button>
+                </div>
+                <p class="cat-title">Zapatos de mujer</p>
               </div>
               <div class="category-card">
-                <div class="cat-image kids"></div>
-                <p class="cat-title">Kids' Shoes</p>
+                <div class="cat-image kids">
+                    <button class="card-btn">Ver colección</button>
+                </div>
+                <p class="cat-title">Zapatos para niños</p>
               </div>
             </div>
           </section>
@@ -143,11 +197,11 @@
           <section class="mailing">
             <div class="mailing-inner">
               <div class="mailing-text">
-                <h1>Join Our Mailing List</h1>
-                <p>Stay up-to-date with the latest arrivals, exclusive offers, and more.</p>
+                <h1>Únase a nuestra lista de correo</h1>
+                <p>Manténgase actualizado con las últimas llegadas, ofertas exclusivas y más.</p>
               </div>
               <div class="mailing-action">
-                <button class="primary-btn wide">Sign Up</button>
+                <button class="primary-btn wide">Inscribirse</button>
               </div>
             </div>
           </section>
@@ -155,12 +209,12 @@
 
         <footer class="site-footer">
           <div class="footer-links">
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <a href="#">FAQ</a>
-            <a href="#">Returns &amp; Exchanges</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Contacto</a>
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Devoluciones y cambios</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Condiciones de servicio</a>
           </div>
           <div class="social-row">
             <a href="#" aria-label="Twitter">
@@ -191,7 +245,7 @@
               </div>
             </a>
           </div>
-          <p class="copyright">© 2024 Zapas. All rights reserved.</p>
+          <p class="copyright">© 2025 E-Zapas. Todos los derechos reservados</p>
         </footer>
       </div>
     </div>

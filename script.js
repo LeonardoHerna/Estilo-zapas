@@ -61,3 +61,36 @@
       });
   });
 })();
+
+
+
+document.querySelectorAll('.dropdown-toggle').forEach(button => {
+    button.addEventListener('click', (e) => {
+      // Evita que se cierre instantáneamente al hacer clic
+      e.preventDefault();
+      const dropdown = button.parentElement;
+
+      // Cierra los demás menús abiertos
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+
+      // Alternar visibilidad del actual
+      dropdown.classList.toggle('open');
+    });
+  });
+
+  // Cierra el menú si se hace clic fuera
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+
+// Abre icono hamburgesa
+  const toggleBtn = document.querySelector('.menu-toggle');
+const links = document.querySelector('.links');
+
+toggleBtn.addEventListener('click', () => {
+  links.classList.toggle('open');
+});
